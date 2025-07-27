@@ -1,0 +1,15 @@
+/* Tailwind already handles most styles */
+/* Add toast bar animation */
+@keyframes toastbar {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.animate-toastbar {
+    animation: toastbar 3s linear forwards;
+}

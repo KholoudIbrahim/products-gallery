@@ -1,27 +1,93 @@
-# ProductsGallery
+# 🛒 Angular E-Commerce App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## 📝 Project Overview
 
-## Development server
+This is a fully responsive e-commerce demo application built with **Angular 18**, **Tailwind CSS**, and powered by the [Fake Store API](https://fakestoreapi.com/). It includes complete features for product management, cart operations, user authentication, and checkout simulation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 🔑 Key Features
 
-## Code scaffolding
+- 🔐 JWT Authentication with login/logout
+- 🌙 Dark Mode Toggle (Tailwind + LocalStorage)
+- 🌍 Internationalization (i18n) ready
+- 🛍 Product listing with ratings, filtering & pagination
+- 📦 Cart system with quantity control, persistent storage, and API sync
+- 🧾 Product CRUD operations (Admin features)
+- 👥 User management with modals (Add/Edit/Delete)
+- 💳 Mock Checkout Form
+- 🚀 Lazy-loaded feature modules
+- 🛠 Angular Guards, Services, Observables & Reactive Forms
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🖼 Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🏠 Home Page with Dark Mode & Cart Badge  
+![Home with Cart](screenshots/home-dark-cart.png)
 
-## Running unit tests
+### 🛍 Products Grid with Ratings & Add to Cart  
+![Product Cards](screenshots/products-grid.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🧺 Cart with Quantity Controls & Total Calculation  
+![Cart View](screenshots/cart-quantity.png)
 
-## Running end-to-end tests
+### 👤 User Management Modals (Admin)  
+![Users Modal](screenshots/user-management.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🧱 Tech Stack Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Layer             | Technology                     |
+|------------------|--------------------------------|
+| **Frontend**     | Angular 18.2.x (NgModules)     |
+| **Styling**      | Tailwind CSS + SCSS            |
+| **API**          | [Fake Store API](https://fakestoreapi.com/) |
+| **Routing**      | Angular Router with Guards     |
+| **Forms**        | Reactive Forms                 |
+| **State**        | Services + RxJS + localStorage |
+| **i18n**         | Angular i18n                   |
+| **Build & Serve**| Angular CLI                    |
+| **Deployment**   | Firebase / (Vercel) / Netli
+
+---
+
+## 🚀 How to Run
+
+1. **Install dependencies:**
+
+```bash
+npm install
+Run the development server:
+
+ng serve
+Navigate to:
+
+http://localhost:4200
+📁 Folder Structure
+css
+
+src/
+├── app/
+│   ├── components/
+│   ├── services/
+│   ├── models/
+│   ├── guards/
+│   ├── modules/ (Lazy Loaded)
+│   └── shared/
+├── assets/
+│   └── i18n/
+├── environments/
+├── styles/
+└── index.html
+🙋‍♀️ Author
+Kholoud Elshami
+🛠 Built for learning & demo purposes.
+
+📜 License
+This project is open-source and available under the MIT License.
+
+---
+
+### ✅ To Complete This README:
+
+

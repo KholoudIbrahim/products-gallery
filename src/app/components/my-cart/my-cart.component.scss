@@ -1,0 +1,37 @@
+/* Optional custom styles, otherwise Tailwind handles layout */
+
+:host {
+    display: block;
+}
+
+img {
+    border-radius: 0.25rem;
+}
+
+button {
+    transition: background-color 0.2s ease;
+}
+:host {
+    display: block;
+    padding: 1rem;
+
+    .product-card {
+        @apply flex items-center gap-4 border p-4 rounded-lg shadow-sm bg-white dark:bg-gray-800;
+    }
+
+    img {
+        @apply w-20 h-20 object-contain;
+    }
+
+    .quantity-controls button {
+        @apply px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded;
+    }
+
+    .remove-button {
+        @apply text-red-500 text-sm mt-2;
+    }
+
+    .toast {
+        @apply fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow transition-opacity duration-500;
+    }
+}

@@ -1,0 +1,109 @@
+<div
+  class="fixed inset-0 z-40 bg-black/50 flex items-center justify-center"
+  *ngIf="isVisible"
+>
+  <div
+    class="w-full max-w-xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg relative"
+  >
+    <!-- Close button -->
+    <button
+      (click)="close()"
+      class="absolute top-2 right-3 text-xl text-gray-600 hover:text-red-500"
+    >
+      ✖
+    </button>
+
+    <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+      ➕ Add New Product
+    </h2>
+
+    <form (ngSubmit)="submit()" #form="ngForm" class="space-y-4">
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="product.title"
+        placeholder="Title"
+        required
+        class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
+      />
+
+      <input
+        type="number"
+        name="price"
+        [(ngModel)]="product.price"
+        placeholder="Price"
+        required
+        class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
+      />
+
+      <input
+        type="text"
+        name="category"
+        [(ngModel)]="product.category"
+        placeholder="Category"
+        required
+        class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
+      />
+
+      <input
+        type="text"
+        name="image"
+        [(ngModel)]="product.image"
+        placeholder="Image URL"
+        required
+        class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
+      />
+
+      <!-- Live Image Preview -->
+      <div *ngIf="product.image" class="w-full">
+        <img
+          [src]="product.image"
+          alt="Preview"
+          class="w-40 h-40 object-contain border rounded mx-auto mt-2"
+          (error)="imageError = true"
+          (load)="imageError = false"
+        />
+        <p *ngIf="imageError" class="text-red-500 text-center">
+          Invalid image URL
+        </p>
+      </div>
+
+      <textarea
+        name="description"
+        [(ngModel)]="product.description"
+        rows="4"
+        placeholder="Description"
+        required
+        class="w-full border px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
+      ></textarea>
+
+      <button
+        type="submit"
+        [disabled]="!form.valid"
+        class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded"
+      >
+        Add Product
+      </button>
+    </form>
+
+    <!-- Toast -->
+    <div
+      *ngIf="showToast"
+      class="mt-6 p-4 flex items-start gap-3 bg-green-100 border border-green-300 text-green-800 rounded relative"
+    >
+      <div class="text-2xl">✅</div>
+      <div class="flex-1">
+        <div class="font-semibold">Product Added!</div>
+        <div class="w-full h-1 mt-2 bg-green-300">
+          <div class="h-1 bg-green-600 animate-slide-out"></div>
+        </div>
+      </div>
+      <button
+        class="absolute top-1 right-2 text-lg"
+        (click)="showToast = false"
+      >
+        ✖️
+      </button>
+    </div>
+  </div>
+</div>

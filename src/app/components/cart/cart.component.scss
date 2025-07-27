@@ -1,0 +1,35 @@
+input[type='number'] {
+    @apply border rounded w-16 text-center;
+}
+
+button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+@keyframes slide-out {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.animate-slide-out {
+    animation: slide-out 2s linear forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+.animate-slide-out {
+    animation: slide-out 2s linear forwards;
+}

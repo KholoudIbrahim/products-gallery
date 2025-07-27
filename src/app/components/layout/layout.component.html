@@ -1,0 +1,27 @@
+<nav
+  class="bg-white dark:bg-gray-800 shadow px-4 py-3 flex justify-between items-center"
+>
+  <div class="text-lg font-bold text-gray-800 dark:text-white">
+    🛒 E-Commerce
+  </div>
+
+  <div class="flex gap-4 items-center">
+    <button
+      (click)="toggleDarkMode()"
+      class="text-sm px-2 py-1 border rounded dark:text-white"
+    >
+      {{ darkMode ? "☀️ Light" : "🌙 Dark" }}
+    </button>
+
+    <button
+      (click)="logout()"
+      class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+    >
+      Logout
+    </button>
+  </div>
+</nav>
+
+<main class="p-4 dark:bg-gray-900 min-h-screen text-gray-900 dark:text-white">
+  <router-outlet></router-outlet>
+</main>
