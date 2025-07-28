@@ -8,12 +8,11 @@ This is a fully responsive e-commerce demo application built with **Angular 18**
 
 - 🔐 JWT Authentication with login/logout
 - 🌙 Dark Mode Toggle (Tailwind + LocalStorage)
-- 🌍 Internationalization (i18n) ready
-- 🛍 Product listing with ratings, filtering & pagination
-- 📦 Cart system with quantity control, persistent storage, and API sync
+- 🛍 Product listing with CRUD operations, ratings, filtering, and searching
+- 📦 Cart system with quantity control, persistent storage, and API sync, CRUD operations 
 - 🧾 Product CRUD operations (Admin features)
 - 👥 User management with modals (Add/Edit/Delete)
-- 💳 Mock Checkout Form
+- 💳 Mock Checkout Form (in progress..)
 - 🚀 Lazy-loaded feature modules
 - 🛠 Angular Guards, Services, Observables & Reactive Forms
 
@@ -21,17 +20,16 @@ This is a fully responsive e-commerce demo application built with **Angular 18**
 
 ## 🖼 Screenshots
 
-### 🏠 Home Page with Dark Mode & Cart Badge  
-![Home with Cart](screenshots/home-dark-cart.png)
-
-### 🛍 Products Grid with Ratings & Add to Cart  
-![Product Cards](screenshots/products-grid.png)
+### 🛍 Products Grid with Ratings & Add to Cart, And add new product modal (light and dark mode)
+![1](https://github.com/user-attachments/assets/f02209d4-ba90-4130-91b3-592b9f87c48d)
+![5](https://github.com/user-attachments/assets/7d45cb8f-4f0a-46bd-a97e-5c2b72197f1f)
+![2](https://github.com/user-attachments/assets/49e527f9-c67c-48b0-83ac-1880c72920b0)
 
 ### 🧺 Cart with Quantity Controls & Total Calculation  
-![Cart View](screenshots/cart-quantity.png)
+![3](https://github.com/user-attachments/assets/3fe82b8e-d6db-43c0-aacd-db8a2e6710ad)
 
 ### 👤 User Management Modals (Admin)  
-![Users Modal](screenshots/user-management.png)
+![4](https://github.com/user-attachments/assets/22507f7a-a5f8-408a-a04e-4abd3cd33203)
 
 ---
 
@@ -70,12 +68,12 @@ src/
 ├── app/
 │   ├── components/
 │   ├── services/
-│   ├── models/
-│   ├── guards/
-│   ├── modules/ (Lazy Loaded)
 │   └── shared/
+│        └── guards/
+│        └── interceptors/
+│        └── modules/
 ├── assets/
-│   └── i18n/
+│   └── images/
 ├── environments/
 ├── styles/
 └── index.html
@@ -85,9 +83,4 @@ Kholoud Elshami
 
 📜 License
 This project is open-source and available under the MIT License.
-
----
-
-### ✅ To Complete This README:
-
 
