@@ -1,8 +1,8 @@
 <nav
   class="bg-white dark:bg-gray-800 shadow px-4 py-3 flex justify-between items-center"
 >
-  <div class="text-lg font-bold text-gray-800 dark:text-white">
-    🛒 E-Commerce
+  <div class="text-xl font-bold text-gray-800 dark:text-white flex justify-center items-center gap-3" routerLink="/">
+    <img src="assets/images/logo/Logo (Stroke).png" class="w-1/4 h-1/4" alt="products gallery"> E-Commerce
   </div>
 
   <div class="flex gap-4 items-center">
@@ -12,6 +12,14 @@
     >
       {{ darkMode ? "☀️ Light" : "🌙 Dark" }}
     </button>
+    <a routerLink="/my-cart" class="relative inline-block">
+  🛒
+  <span
+    *ngIf="cartCount > 0"
+    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+    {{ cartCount }}
+  </span>
+</a>
 
     <button
       (click)="logout()"

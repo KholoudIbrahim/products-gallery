@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-layout',
@@ -9,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent {
   darkMode = false;
-
-  constructor(private auth: AuthService, private router: Router) {}
+ cartCount = 0;
+  constructor(private auth: AuthService, private router: Router,private cartService: CartService) {}
 
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
@@ -34,5 +36,10 @@ export class LayoutComponent {
     if (this.darkMode) {
       document.documentElement.classList.add('dark');
     }
+ this.cartService.cart$.subscribe((cart) => {
+   this.cartCount = cart?.products.reduce((sum, p) => sum + p.quantity, 0) || 0;
+ });
+
   }
+
 }

@@ -1,7 +1,11 @@
 
 <div class="p-6 max-w-4xl mx-auto">
-  <h2 class="text-3xl font-bold mb-6">🛒 My Cart</h2>
-
+ <div class="flex justify-between items-center mb-6">
+   <h2 class="text-3xl font-bold ">🛒 My Cart</h2>
+<button routerLink="/cart" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+  View all carts
+</button>
+ </div>
   <div *ngIf="loading" class="text-center text-blue-500">Loading cart...</div>
   <div *ngIf="error" class="text-center text-red-500">{{ error }}</div>
 

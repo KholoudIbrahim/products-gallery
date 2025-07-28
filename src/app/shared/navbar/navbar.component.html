@@ -17,14 +17,7 @@
           <span class="dark:hidden">🌙</span>
           <span class="hidden dark:inline">☀️</span>
         </button>
-        <a routerLink="/my-cart" class="relative inline-block">
-  🛒
-  <span
-    *ngIf="cartCount > 0"
-    class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-    {{ cartCount }}
-  </span>
-</a>
+        
 
         <!-- <button *ngIf="authService.isAuthenticated()" (click)="authService.logout()" 
           class="text-gray-900 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-400">

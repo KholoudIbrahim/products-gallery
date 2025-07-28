@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +8,7 @@ import { CartService } from '../../services/cart.service';
 export class NavbarComponent {
   darkMode = false;
   totalItems = 0;
-  cartCount = 0;
+ 
 
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
@@ -20,11 +19,6 @@ export class NavbarComponent {
     }
   }
 
-  constructor(private cartService: CartService) {}
-  ngOnInit(): void {
-    this.cartService.cart$.subscribe((cart) => {
-      this.cartCount =
-        cart?.products.reduce((sum, p) => sum + p.quantity, 0) || 0;
-    });
-  }
+  constructor() {}
+ 
 }

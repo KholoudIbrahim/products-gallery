@@ -15,6 +15,11 @@ export class CartService {
   });
 
   constructor(private http: HttpClient) {}
+  /**
+   * An observable of the currently active cart.
+   * This is a subject that is updated whenever the cart changes,
+   * and emits the latest value on subscription.
+   */
   get cart$(): Observable<Cart> {
     return this.cartSubject.asObservable();
   }

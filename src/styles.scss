@@ -45,8 +45,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // 
 
 /* styles.scss */
-.input {
-  @apply w-full p-2 border rounded dark:bg-gray-800 dark:text-white dark:border-gray-600;
+.input,input {
+  @apply w-full p-2 border rounded dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600;
+}
+
+select {
+  @apply w-1/5 p-2 border rounded dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600;
 }
 
 @tailwind base;
