@@ -1,21 +1,33 @@
-
 <div class="p-6 max-w-4xl mx-auto">
- <div class="flex justify-between items-center mb-6">
-   <h2 class="text-3xl font-bold ">🛒 My Cart</h2>
-<button routerLink="/cart" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
-  View all carts
-</button>
- </div>
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-3xl font-bold">🛒 My Cart</h2>
+    <button
+      routerLink="/cart"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded sm:w-1/2"
+    >
+      View all carts
+    </button>
+  </div>
   <div *ngIf="loading" class="text-center text-blue-500">Loading cart...</div>
   <div *ngIf="error" class="text-center text-red-500">{{ error }}</div>
 
-  <div *ngIf="products.length === 0 && !loading" class="text-center text-gray-500">
+  <div
+    *ngIf="products.length === 0 && !loading"
+    class="text-center text-gray-500"
+  >
     Your cart is empty.
   </div>
 
   <div *ngIf="products.length > 0" class="space-y-6">
-    <div *ngFor="let product of products" class="flex items-center gap-4 border p-4 rounded-lg shadow-sm bg-white dark:bg-gray-800">
-      <img [src]="product.image" alt="{{ product.title }}" class="w-20 h-20 object-contain" />
+    <div
+      *ngFor="let product of products"
+      class="flex items-center gap-4 border p-4 rounded-lg shadow-sm bg-white dark:bg-gray-800"
+    >
+      <img
+        [src]="product.image"
+        alt="{{ product.title }}"
+        class="w-20 h-20 object-contain"
+      />
 
       <div class="flex-1">
         <h3 class="text-lg font-semibold">{{ product.title }}</h3>
@@ -25,7 +37,8 @@
           <button
             class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded"
             (click)="updateQuantity(product.id, -1)"
-            [disabled]="product.quantity <= 1 || product.id == null">
+            [disabled]="product.quantity <= 1 || product.id == null"
+          >
             −
           </button>
 
@@ -34,7 +47,8 @@
           <button
             class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded"
             (click)="updateQuantity(product.id, 1)"
-            [disabled]="product.id == null">
+            [disabled]="product.id == null"
+          >
             +
           </button>
         </div>
@@ -42,23 +56,27 @@
 
       <div class="flex flex-col items-end">
         <p class="text-md font-semibold">
-          ${{ (product.quantity * product.price) | number:'1.2-2' }}
+          ${{ product.quantity * product.price | number : "1.2-2" }}
         </p>
         <button
           (click)="removeProduct(product.id)"
           class="text-red-500 text-sm mt-2"
-          [disabled]="product.id == null">
+          [disabled]="product.id == null"
+        >
           Remove
         </button>
       </div>
     </div>
 
     <div class="text-right text-xl font-bold border-t pt-4">
-      Total: ${{ getTotal() | number:'1.2-2' }}
+      Total: ${{ getTotal() | number : "1.2-2" }}
     </div>
   </div>
 
-  <div *ngIf="showToast" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow transition-opacity duration-500">
+  <div
+    *ngIf="showToast"
+    class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow transition-opacity duration-500"
+  >
     ✅ Cart updated
   </div>
 </div>
