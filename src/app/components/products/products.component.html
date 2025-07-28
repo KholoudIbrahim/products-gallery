@@ -19,8 +19,8 @@
       <option value="name-asc">Name (A–Z)</option>
     </select>
 
-    <button (click)="showAddModal = true" class="btn bg-green-600 text-white">
-      ➕ Add Product
+    <button (click)="showAddModal = true" class="btn bg-green-600 text-white rounded" style="padding: 0.5rem 1rem;">
+      ➕ Add New Product
     </button>
 
     <app-add-product [isVisible]="showAddModal"></app-add-product>
@@ -46,6 +46,47 @@
         <p class="text-red-600 font-bold text-md dark:text-red-400">
           {{ product.price | currency: 'EGP' : 'symbol' }}
         </p>
+                <!-- Rating Section -->
+        <div class="flex items-center mt-2">
+          <ng-container *ngFor="let star of getStars(product.rating.rate)">
+            <svg
+              *ngIf="star === 1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star-fill text-yellow-500"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.612 15.443c-.398.207-.876-.106-.876-.547V10.4L.176 7.601c-.327-.32-.158-.888.282-.95l4.342-.632 1.944-4.105c.171-.34.544-.342.715 0l1.944 4.105 4.342.632c.44.062.609.63.282.95l-3.56 2.799v4.497c0 .44-.478.754-.876.547L8 12.527l-3.388 2.916z" />
+            </svg>
+          </ng-container>
+          <ng-container *ngFor="let star of getHalfStars(product.rating.rate)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star-half text-yellow-500"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 12.527l-3.388 2.916c-.398.207-.876-.106-.876-.547V10.4L.176 7.601c-.327-.32-.158-.888.282-.95l4.342-.632L6.98 2.17c.171-.34.544-.342.715 0l1.944 4.105 4.342.632c.44.062.609.63.282.95l-3.56 2.799v4.497c0 .44-.478.754-.876.547L8 12.527z" />
+            </svg>
+          </ng-container>
+          <ng-container *ngFor="let star of getEmptyStars(product.rating.rate)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star text-gray-400"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3.612 15.443c-.398.207-.876-.106-.876-.547V10.4L.176 7.601c-.327-.32-.158-.888.282-.95l4.342-.632 1.944-4.105c.171-.34.544-.342.715 0l1.944 4.105 4.342.632c.44.062.609.63.282.95l-3.56 2.799v4.497c0 .44-.478.754-.876.547L8 12.527l-3.388 2.916z" />
+            </svg>
+          </ng-container>
+          <span class="text-sm text-gray-500 ml-2">({{ product.rating.count }} reviews)</span>
+        </div>
 
         <div
           class="mt-4 flex justify-between items-center"

@@ -121,4 +121,19 @@ export class ProductsComponent implements OnInit {
   goToDetails(id: number): void {
     this.router.navigate(['/products', id]);
   }
+  getStars(rating: number): number[] {
+    const fullStars = Math.floor(rating);
+    return Array(fullStars).fill(1);
+  }
+
+  getHalfStars(rating: number): number[] {
+    return rating % 1 >= 0.5 ? [1] : [];
+  }
+
+  getEmptyStars(rating: number): number[] {
+    const fullStars = Math.floor(rating);
+    const halfStars = rating % 1 >= 0.5 ? 1 : 0;
+    const totalStars = 5;
+    return Array(totalStars - fullStars - halfStars).fill(1);
+  }
 }
